@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Added by developer 
 gem 'simple_form'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -34,6 +35,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'warden', '~> 1.2', '>= 1.2.6'
 end
 
 group :development do

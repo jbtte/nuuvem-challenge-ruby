@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  purchaser: MyString
-  description: MyString
-  price: 1.5
-  count: 1
-  address: MyString
-  merchant: MyString
+  purchaser: Tom Brady
+  description: 3 socks for $10
+  price: 10
+  count: 2
+  address: 345 Grove, Tampa Bay
+  merchant: Nufsaid Inc.
 
 two:
-  purchaser: MyString
-  description: MyString
-  price: 1.5
+  purchaser: Gisele Bundchen
+  description: Donuts box for $8.5
+  price: 8.5
   count: 1
-  address: MyString
-  merchant: MyString
+  address: 100 No street, Boston
+  merchant: My Donuts corp.
