@@ -8,11 +8,11 @@ class SalesController < ApplicationController
   end
 
   def create
+    return redirect_to root_path, alert: 'Please choose a file' unless params[:file]
+    
     @uploaded_file = params[:file].tempfile
     ## Prevent upload of different type of file
-    unless @uploaded_file.path.match?(/.tab$/)
-      return redirect_to root_path, alert: 'Incompatible file extension' 
-    end
+    return redirect_to root_path, alert: 'Incompatible file extension'  unless @uploaded_file.path.match?(/.tab$/)
 
     ## Normalize and save info in db
     normalized_info.each do |line|
