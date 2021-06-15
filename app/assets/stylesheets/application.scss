@@ -1,2 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Exo+2:ital,wght@1,200&display=swap');
 @import "bootstrap/scss/bootstrap";
-@import "sales.scss"
+
+body {
+  background: linear-gradient(180deg, rgba(43,162,176,0.1) 0%, rgba(43,162,176,0.1) 100%), asset-url('abstract-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1, h5 {
+  font-family: 'Exo 2', sans-serif;
+}
+
+p {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.image-upload > input
+{
+   display: none;
+}
+.image-upload > label{
+  cursor:pointer;
+}
