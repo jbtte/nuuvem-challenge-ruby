@@ -8,7 +8,11 @@ class SalesController < ApplicationController
   end
 
   def create
-    return redirect_to root_path, alert: 'Please choose a file' unless params[:file]
+  
+  unless params[:file]
+    redirect_to root_path, alert: "Please select a file"
+    return 0
+  end
     
     @uploaded_file = params[:file].tempfile
     ## Prevent upload of different type of file
@@ -19,6 +23,7 @@ class SalesController < ApplicationController
       @entry = Sale.new(line)
       redirect_to :root_path, notice: 'Incompatible information on file' unless @entry.save!
     end
+
     redirect_to root_path
   end
 

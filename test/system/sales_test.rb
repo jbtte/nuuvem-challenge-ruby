@@ -7,4 +7,6 @@ class SalesTest < ApplicationSystemTestCase
     assert_selector 'h5', text: 'Total Gross income: $ 28.5'
     assert_selector 'h5', text: 'Last upload file gross income: $ 28.5'
   end
+
+  
 end
