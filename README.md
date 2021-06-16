@@ -11,6 +11,7 @@ The webapp was developed as a web interface that accepts file uploads, normalize
    * [Table of Contents](#table-of-contents)
    * [Project Status](#project-status)
    * [Features](#features)
+   * [Live Link](#live-link)
    * [Instalation](#instalation)
       * [Dependencies](#dependencies)
       * [Local machine](#local-machine)
@@ -28,6 +29,9 @@ Version: 1.0.1
 - [x] Accept (via HTML form) file uploads of TAB-separated files, with the following columns: purchaser name, item description, item price, purchase count, merchant address, merchant name.
 - [x] Interpret (parse) the received file, normalize the data, and save the data correctly in a relational database.
 - [x] Shows the total gross income represented by the sales data after each file upload, and also the total all-time gross income. 
+
+## Live link
+https://nuvvem-challenge-ruby.herokuapp.com/
 
 ## Instalation
 ### Dependency
