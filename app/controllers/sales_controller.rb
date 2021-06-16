@@ -21,7 +21,7 @@ class SalesController < ApplicationController
     ## Normalize and save info in db
     normalized_info.each do |line|
       @entry = Sale.new(line)
-      redirect_to :root_path, notice: 'Incompatible information on file' unless @entry.save!
+      redirect_to :root_path, alert: 'Incompatible information on file' unless @entry.save!
     end
 
     redirect_to root_path

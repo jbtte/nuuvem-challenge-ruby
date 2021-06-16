@@ -2,6 +2,10 @@ require "test_helper"
 
 class SalesControllerTest < ActionDispatch::IntegrationTest
 
+def setup
+    sign_in users(:user_1)
+  end
+
   test 'file uploading and included in db' do
     assert_equal 2, Sale.all.count
     file = fixture_file_upload('/test_input.tab')

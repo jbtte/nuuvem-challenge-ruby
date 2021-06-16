@@ -1,6 +1,12 @@
 require 'application_system_test_case'
 
+
+
 class SalesTest < ApplicationSystemTestCase
+  def setup
+    sign_in users(:user_1)
+  end
+  
   test 'index headers' do
     visit root_path
     assert_selector 'h1', text: 'Company Sales'
