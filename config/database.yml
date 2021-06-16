@@ -61,6 +61,10 @@ test:
   adapter: postgresql
   host: localhost
   encoding: unicode
+  username: <%= ENV[“POSTGRES_USER”] %>
+  password: <%= ENV[“POSTGRES_PASSWORD”] %>
+
+
   
 
 # As with config/credentials.yml, you never want to store sensitive information,
