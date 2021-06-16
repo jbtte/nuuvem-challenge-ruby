@@ -2,9 +2,13 @@ class SalesController < ApplicationController
   def index
     @gross_income = Sale.sum('price * count')
 
-    last_date = Sale.last.created_at
-    last_update = Sale.where("created_at > ?", last_date - 1.minute)
-    @last_gross_income = last_update.sum('price * count')
+    if Sale.last 
+      last_date = Sale.last.created_at
+      last_update = Sale.where("created_at > ?", last_date - 1.minute)
+      @last_gross_income = last_update.sum('price * count')
+    else
+      @last_gross_income = 0
+    end
   end
 
   def create
