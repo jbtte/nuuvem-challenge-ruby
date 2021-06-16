@@ -8,5 +8,9 @@ class SalesTest < ApplicationSystemTestCase
     assert_selector 'h5', text: 'Last upload file gross income: $ 28.5'
   end
 
-  
+  test 'index buttons' do
+    visit root_path
+    assert_selector 'input[type=submit]', count:1
+    assert_selector 'input[type=file]', count:1
+  end
 end
