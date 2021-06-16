@@ -4,7 +4,6 @@ This project was developed as a challenge for a developer position at Nuuvem.
 
 The webapp was developed as a web interface that accepts file uploads, normalizes the data and stores it in a relational database.
 
-**Live link: https://mister-cocktail-lewagon-bsb.herokuapp.com/**
 
 ## Resources
 1. Accept (via HTML form) file uploads of TAB-separated files, with the following columns: purchaser name, item description, item price, purchase count, merchant address, merchant name.
