@@ -28,6 +28,7 @@ jobs:
       - name: Set up PostgreSQL
         run: |
           sudo apt-get install postgresql libpq-dev
+          sudo service postgresql start
       - name: Install dependencies
         run: |
           gem install bundler
