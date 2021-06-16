@@ -11,3 +11,11 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+function hideNotice() {
+  setInterval(function() {
+    document.querySelector('.alert').style.display = "none";
+  }, 5000);
+}
+
+hideNotice();
