@@ -32,7 +32,7 @@ jobs:
       - name: Install postgres
         run: |
           sudo apt-get -yqq install libpq-dev
-          sudo service postgresql start
+          sudo start postgresql service
           sudo -u postgres createuser --superuser "$USER"
       - name: Install dependencies
         run: |
