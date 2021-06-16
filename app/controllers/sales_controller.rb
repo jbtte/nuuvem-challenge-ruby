@@ -12,7 +12,6 @@ class SalesController < ApplicationController
   end
 
   def create
-  
   unless params[:file]
     redirect_to root_path, alert: "Please select a file"
     return 0
