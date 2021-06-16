@@ -52,6 +52,7 @@ $ git clone https://github.com/jbtte/react-sti-weather
 $ cd nuuvem-challenge-ruby
 
 # Install dependecies
+$ yarn install
 $ bundle install
 
 # Start postgresql server
