@@ -4,8 +4,6 @@ This project was developed as a challenge for a developer position at Nuuvem.
 
 The webapp was developed as a web interface that accepts file uploads, normalizes the data and stores it in a relational database.
 
-![GitHub](https://img.shields.io/github/license/jbtte/nuuvem-challenge-ruby)
-
 
 ## Table of Contents
 <!--ts-->
@@ -37,6 +35,7 @@ Before you begin the instalation process, you must have installed:
 * [Git](https://git-scm.com)
 * [Ruby](https://www.ruby-lang.org/en/) ~2.6.6
 * [Rails](https://rubyonrails.org/) ~6.1.3.2
+* [Postgresql](https://www.postgresql.org/)
 
 Besides that you should have a code editor, for example [VSCode](https://code.visualstudio.com/)
 
@@ -50,6 +49,9 @@ $ cd nuuvem-challenge-ruby
 
 # Install dependecies
 $ bundle install
+
+# Start postgresql server
+$ brew services start postgresql
 
 # Create database
 $ rails db:create db:migrate
