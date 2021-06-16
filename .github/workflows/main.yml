@@ -20,7 +20,6 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
           bundler-cache: true
       - uses: borales/actions-yarn@v2.0.0
         with:
