@@ -61,6 +61,8 @@ test:
   adapter: postgresql
   host: localhost
   encoding: unicode
+  username: postgres
+  password: postgres
   
 
 # As with config/credentials.yml, you never want to store sensitive information,
