@@ -1,8 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class SalesControllerTest < ActionDispatch::IntegrationTest
-
-def setup
+  def setup
     sign_in users(:user_1)
   end
 
@@ -23,16 +24,15 @@ def setup
   end
 
   test 'Show error message if file is not selected' do
-  post sales_path, params: {}
-  assert_equal 302, status
-  assert_equal "Please select a file", flash[:alert] 
+    post sales_path, params: {}
+    assert_equal 302, status
+    assert_equal 'Please select a file', flash[:alert]
   end
 
   test 'Show error message if wrong type of file' do
     file = fixture_file_upload('/csv_input.csv')
     post sales_path, params: { file: file }
     assert_equal 302, status
-    assert_equal "Incompatible file extension", flash[:alert] 
+    assert_equal 'Incompatible file extension', flash[:alert]
   end
-
 end

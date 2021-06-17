@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 require 'application_system_test_case'
-
-
 
 class SalesTest < ApplicationSystemTestCase
   def setup
     sign_in users(:user_1)
   end
-  
+
   test 'index headers' do
     visit root_path
     assert_selector 'h1', text: 'Company Sales'
@@ -16,7 +16,7 @@ class SalesTest < ApplicationSystemTestCase
 
   test 'index buttons' do
     visit root_path
-    assert_selector 'input[type=submit]', count:1
-    assert_selector 'input[type=file]', count:1
+    assert_selector 'input[type=submit]', count: 1
+    assert_selector 'input[type=file]', count: 1
   end
 end

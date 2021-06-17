@@ -1,21 +1,25 @@
+# frozen_string_literal: true
+
 ENV['RAILS_ENV'] ||= 'test'
-require_relative "../config/environment"
-require "rails/test_help"
+require_relative '../config/environment'
+require 'rails/test_help'
 
-class ActiveSupport::TestCase
-  # Run tests in parallel with specified workers
-  parallelize(workers: :number_of_processors)
+module ActiveSupport
+  class TestCase
+    # Run tests in parallel with specified workers
+    parallelize(workers: :number_of_processors)
 
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+    fixtures :all
 
-  # Add more helper methods to be used by all tests here...
-  # Devise test helpers
-  # Add more helper methods to be used by all tests here...
-  include Devise::Test::IntegrationHelpers
-  
-  include Warden::Test::Helpers
-  Warden.test_mode!
+    # Add more helper methods to be used by all tests here...
+    # Devise test helpers
+    # Add more helper methods to be used by all tests here...
+    include Devise::Test::IntegrationHelpers
+
+    include Warden::Test::Helpers
+    Warden.test_mode!
+  end
 end
 
 # Register the new driver for Capybara

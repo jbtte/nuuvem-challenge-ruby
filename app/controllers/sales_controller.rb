@@ -1,25 +1,20 @@
+# frozen_string_literal: true
+
 class SalesController < ApplicationController
   def index
-    @gross_income = Sale.sum('price * count')
-
-    if Sale.last 
-      last_date = Sale.last.created_at
-      last_update = Sale.where("created_at > ?", last_date - 1.minute)
-      @last_gross_income = last_update.sum('price * count')
-    else
-      @last_gross_income = 0
-    end
+    @gross_income = Sale.gross_income
+    @last_gross_income = Sale.last ? Sale.last_upload : 0
   end
 
   def create
-  unless params[:file]
-    redirect_to root_path, alert: "Please select a file"
-    return 0
-  end
-    
+    unless params[:file]
+      redirect_to root_path, alert: 'Please select a file'
+      return 0
+    end
+
     @uploaded_file = params[:file].tempfile
     ## Prevent upload of different type of file
-    return redirect_to root_path, alert: 'Incompatible file extension'  unless @uploaded_file.path.match?(/.tab$/)
+    return redirect_to root_path, alert: 'Incompatible file extension' unless @uploaded_file.path.match?(/.tab$/)
 
     ## Normalize and save info in db
     normalized_info.each do |line|
@@ -35,7 +30,7 @@ class SalesController < ApplicationController
   def normalized_info
     open_file = File.read(@uploaded_file).split("\n")[1..]
 
-    headers = ['purchaser', 'description', 'price', 'count', 'address', 'merchant']
+    headers = %w[purchaser description price count address merchant]
 
     open_file.map do |line|
       line_info = line.split("\t")
